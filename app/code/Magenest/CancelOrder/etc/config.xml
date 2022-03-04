@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<cancelorder>
+			<general>
+				<enabled>1</enabled>
+                <order_status>Pending,Processing</order_status>
+			</general>
+			<frontend>
+                <button_label>Cancel Order</button_label>
+				<popup_notice>Your request will be solved in 48 hours</popup_notice>
+				<is_required>reason</is_required>
+			</frontend>
+		</cancelorder>
+	</default>
+</config>

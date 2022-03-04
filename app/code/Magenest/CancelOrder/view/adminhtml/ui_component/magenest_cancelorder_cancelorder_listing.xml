@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">magenest_cancelorder_cancelorder_listing.magenest_cancelorder_cancelorder_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>magenest_cancelorder_cancelorder_columns</spinner>
+		<deps>
+			<dep>magenest_cancelorder_cancelorder_listing.magenest_cancelorder_cancelorder_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="magenest_cancelorder_cancelorder_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">cancelorder_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Magenest_CancelOrder::CancelOrder</aclResource>
+		<dataProvider name="magenest_cancelorder_cancelorder_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>cancelorder_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="magenest_cancelorder_cancelorder_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>cancelorder_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="cancelorder_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="order_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Order Id</label>
+			</settings>
+		</column>
+		<column name="order_cancel_reason">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">order cancel reason</label>
+			</settings>
+		</column>
+		<column name="comment">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">comment</label>
+			</settings>
+		</column>
+		<column name="cancel_by">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">cancel by</label>
+			</settings>
+		</column>
+        <column name="cancel_date">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Cancel Date</label>
+            </settings>
+        </column>
+	</columns>
+</listing>

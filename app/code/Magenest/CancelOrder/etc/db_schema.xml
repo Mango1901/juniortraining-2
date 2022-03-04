@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="magenest_cancelorder" resource="default" engine="innodb" comment="magenest_cancelorder_cancelorder Table">
+		<column xsi:type="int" name="cancelorder_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="cancelorder_id"/>
+		</constraint>
+		<column name="order_id" nullable="true" xsi:type="text" comment="request_id"/>
+		<column name="order_cancel_reason" nullable="true" xsi:type="text" comment="order_cancel_reason"/>
+		<column name="comment" nullable="true" xsi:type="text" comment="comment"/>
+        <column name="customer_email" nullable="true" xsi:type="text" comment="customer Email"/>
+        <column name="cancel_date" nullable="true" xsi:type="date" comment="cancel Date"/>
+		<column name="cancel_by" nullable="true" xsi:type="text" comment="cancel_by"/>
+	</table>
+</schema>
